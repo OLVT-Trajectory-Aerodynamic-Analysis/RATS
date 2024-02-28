@@ -145,6 +145,7 @@ RAS_vs_Raven_ratio_acceleration_mag=RAS_acceleration_mag_aligned./Raven_accelera
 
 
     %Altitude
+    %Position Magnitude
     fig3 = figure();
     fig3.Name = "Altitude Difference";
    
@@ -159,22 +160,5 @@ RAS_vs_Raven_ratio_acceleration_mag=RAS_acceleration_mag_aligned./Raven_accelera
     legend('Location', 'best')
     grid on
     grid minor
-
-    %Acceleration Magnitude
-    fig4 = figure();
-    fig4.Name = "Acceleration Difference";
-   
-    plot(uniform_time, RAS_vs_Raven_acceleration_mag, 'LineWidth', lineWidth, 'DisplayName', "Ras - Raven")
-    hold on
-    plot(uniform_time, RAS_vs_Raven_ratio_acceleration_mag, 'LineWidth', lineWidth, 'DisplayName', "Ras / Raven")
-
-    plotXlines(configs.plotDataSources,  rocket, fig4)
-    trimAxis(configs.plotDataSources, processedData{1, 1})
-    title("RAS vs. Blue Raven Acceleration", 'FontName', 'Times New Roman', 'FontSize', titleSz)
-    xlabel('Time [s]'); ylabel('Acceleration [m/s^2]')
-    legend('Location', 'best')
-    grid on
-    grid minor
-
     
 end

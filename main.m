@@ -81,27 +81,28 @@ clear; close all; clc
     configs.plotDataSources = struct;
 
     % If you want all data sources
-    configs.plotDataSources.Plot = 1;
+    configs.plotDataSources.Plot = 0;
     configs.plotDataSources.SingleFigure = false; % Not Recommended, slow and not updated
     configs.plotDataSources.rocketPhaseLines = true;
     configs.plotDataSources.onlyViewAscent = true;
 
 
     % Plot differences
-    configs.plotDifferences.Plot = 0;
+    configs.plotDifferences.Plot = 1;
     configs.plotDataSources.SingleFigure = false; % Not Recommended, slow and not updated
-    configs.plotDataSources.rocketPhaseLines = false;
-    configs.plotDataSources.onlyViewAscent = false;
+    configs.plotDataSources.rocketPhaseLines = true;
+    configs.plotDataSources.onlyViewAscent = true;
 
 
     % If you want only filtered raw Data
     configs.plotFilteredData.Plot = 0;
     configs.plotFilteredData.SingleFigure = false; % Not Recommended, slow and not updated
-    configs.plotFilteredData.rocketPhaseLines = true;
-    configs.plotFilteredData.onlyViewAscent = true;
+    configs.plotFilteredData.rocketPhaseLines = false;
+    configs.plotFilteredData.onlyViewAscent = false;
 
     %% Call manager functions
     manager(sourceList, rasAeroIILaunchSite, configs, rocket)
+    disp("Complete!!")
     disp("Complete!!")
 end
 
